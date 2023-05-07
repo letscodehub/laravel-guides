@@ -7,7 +7,9 @@
 
 ## Database->Migrations folder (sample codes):
 
-### Student ***
+
+### Student
+***
 
 ```
 Schema::create(‘students’, function (Blueprint $table) {
