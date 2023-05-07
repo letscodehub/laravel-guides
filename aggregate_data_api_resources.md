@@ -7,7 +7,8 @@
 
 ## Database->Migrations folder (sample codes):
 
-            ### Student
+            ### Student ***
+
             ```
             Schema::create(‘students’, function (Blueprint $table) {
                         $table->uuid('uid')->unique()->index();
