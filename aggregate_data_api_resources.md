@@ -123,7 +123,7 @@ Route::apiResource('/display_students’, StudentController::class)
   "id": "12345",
   "FirstName": "Mary",
   "LastName": "Jane",
-  "CourseInfo" : [
+  "CoursesInfo" : [
               {
                   "id": "7890"
                   "name": "Computer Science"
