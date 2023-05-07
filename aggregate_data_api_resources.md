@@ -25,7 +25,7 @@ Schema::create('student_course)', function (Blueprint $table) {
             $table->string('name');
             $table->unique(['student_uid', 'name']);
 
-            $table->foreign('student_uid')->references('uid')->on(‘student’);
+            $table->foreign('student_uid')->references('uid')->on(‘students’);
  });
  ```
 
