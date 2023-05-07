@@ -3,7 +3,7 @@
 - Table a: Student
 - Table b: Course
 
-# NOTE: This is not a complete code, I wrote below snippets to get you started on implementing aggregate json data. Apply the technique, and do your research.
+## NOTE: This is not a complete code, I wrote below snippets to get you started on implementing aggregate json data. Apply the technique, and do your research.
 
 ## Database->Migrations folder (sample codes):
 
