@@ -7,27 +7,27 @@
 
 ## Database->Migrations folder (sample codes):
 
-### Student
-```
-Schema::create(‘students’, function (Blueprint $table) {
-            $table->uuid('uid')->unique()->index();
-            $table->string('fname');
-            $table->string('lname');
-            $table->string('email')->unique();
-});
-```
+            ### Student
+            ```
+            Schema::create(‘students’, function (Blueprint $table) {
+                        $table->uuid('uid')->unique()->index();
+                        $table->string('fname');
+                        $table->string('lname');
+                        $table->string('email')->unique();
+            });
+            ```
 
-### Course
-```
-Schema::create('student_course)', function (Blueprint $table) {
-            $table->bigIncrements('id')->unsigned()->unique();
-            $table->string('student_uid')->index();
-            $table->string('name');
-            $table->unique(['student_uid', 'name']);
+            ### Course
+            ```
+            Schema::create('student_course)', function (Blueprint $table) {
+                        $table->bigIncrements('id')->unsigned()->unique();
+                        $table->string('student_uid')->index();
+                        $table->string('name');
+                        $table->unique(['student_uid', 'name']);
 
-            $table->foreign('student_uid')->references('uid')->on(‘students’);
- });
- ```
+                        $table->foreign('student_uid')->references('uid')->on(‘students’);
+             });
+             ```
 
 ## App->Models folder (sample codes):
 
