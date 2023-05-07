@@ -109,5 +109,23 @@ use App\Http\Controllers\CourseController;
 Route::apiResource('/display_students’, StudentController::class)
 ```
 
+## API sample outputs (/display_students):
+```
+{
+  "id": "12345",
+  "FirstName": "Mary",
+  "LastName": "Jane",
+  "CourseInfo" : [
+              {
+                  "id": "7890"
+                  "name": "Computer Science"
+              },
+              {
+                  "id": "06987"
+                  "name": "Statistics"
+              }
+  ]
+}
+```
 
 
