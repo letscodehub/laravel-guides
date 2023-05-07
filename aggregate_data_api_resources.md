@@ -46,7 +46,7 @@ class Student extends Authenticatable
     protected $primaryKey = 'uid';
     protected $table = ‘students’;
 
-    public function course()
+    public function courses()
     {
         return $this->hasMany(Course::class);
     }
