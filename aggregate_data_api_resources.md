@@ -1,25 +1,24 @@
 
-===============
-Example of the parent and child aggregate data in laravel by using the belongTo and hasMany methods and apiResources classes.
-===============
-Table a: Student
-Table b: Course
+## Example of the parent and child aggregate data in laravel by using the belongTo and hasMany methods and apiResources classes.
+- Table a: Student
+- Table b: Course
 
 # NOTE: This is not a complete code, I wrote below snippets to get you started on implementing aggregate json data. Apply the technique, and do your research.
 
-===============
-Database->Migrations folder (sample codes):
-===============
+## Database->Migrations folder (sample codes):
 
-| Student |
+### Student
+```
 Schema::create(‘students’, function (Blueprint $table) {
             $table->uuid('uid')->unique()->index();
             $table->string('fname');
             $table->string('lname');
             $table->string('email')->unique();
 });
+```
 
-| Course |
+### Course
+```
 Schema::create('student_course)', function (Blueprint $table) {
             $table->bigIncrements('id')->unsigned()->unique();
             $table->string('student_uid')->index();
@@ -28,11 +27,12 @@ Schema::create('student_course)', function (Blueprint $table) {
 
             $table->foreign('student_uid')->references('uid')->on(‘student’);
  });
+ ```
 
-===============
-App->Models folder (sample codes):
-===============
-| Student |
+## App->Models folder (sample codes):
+
+### Student
+```
 use App\Models\Course;
 class Student extends Authenticatable
 {
@@ -46,8 +46,10 @@ class Student extends Authenticatable
         return $this->hasMany(Course::class);
     }
 }
+```
 
-|  Course  |
+### Course
+```
 use App\Models\Student;
 class Course extends Authenticatable
 {
@@ -61,11 +63,12 @@ class Course extends Authenticatable
         return $this->belongsTo(Student::class);
     }
 }
+```
 
-===============
-app->Http->Controller folder (sample codes):
-===============
-| Student |
+## app->Http->Controller folder (sample codes):
+
+### Student
+```
 use Illuminate\Http\Response;
 use App\Http\Resources\StudentCollection;
 
@@ -80,12 +83,12 @@ class StudentController extends ApiController
             ), Response::HTTP_OK);
     }
 }
+```
 
+## app->Http->Resources folder (sample codes):
 
-===============
-app->Http->Resources folder (sample codes):
-===============
-| Student |
+### Student
+```
 use Illuminate\Http\Resources\Json\JsonResource;
 class StudentResource extends JsonResource
 {
@@ -96,12 +99,15 @@ class StudentResource extends JsonResource
       ‘LastName’=> $this->lname,
       ‘CoursesInfo’=> $this->student_courses
 }
+```
 
-
-===============
-Routes->api (sample codes):
-===============
+## Routes->api (sample codes):
+```
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\CourseController;
 
 Route::apiResource('/display_students’, StudentController::class)
+```
+
+
+
