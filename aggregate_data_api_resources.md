@@ -21,6 +21,7 @@ Schema::create(‘students’, function (Blueprint $table) {
 ```
 
 ### Course
+***
 ```
 Schema::create('student_course)', function (Blueprint $table) {
             $table->bigIncrements('id')->unsigned()->unique();
@@ -35,6 +36,7 @@ Schema::create('student_course)', function (Blueprint $table) {
 ## App->Models folder (sample codes):
 
 ### Student
+***
 ```
 use App\Models\Course;
 class Student extends Authenticatable
@@ -52,6 +54,7 @@ class Student extends Authenticatable
 ```
 
 ### Course
+***
 ```
 use App\Models\Student;
 class Course extends Authenticatable
@@ -71,6 +74,7 @@ class Course extends Authenticatable
 ## app->Http->Controller folder (sample codes):
 
 ### Student
+***
 ```
 use Illuminate\Http\Response;
 use App\Http\Resources\StudentCollection;
@@ -91,6 +95,7 @@ class StudentController extends ApiController
 ## app->Http->Resources folder (sample codes):
 
 ### Student
+***
 ```
 use Illuminate\Http\Resources\Json\JsonResource;
 class StudentResource extends JsonResource
